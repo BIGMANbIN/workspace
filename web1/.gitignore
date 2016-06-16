@@ -1,0 +1,7 @@
+out/
+.idea/
+web1.iml
+*.jar
+web/WEB-INF/lib/
+static
+etc/
