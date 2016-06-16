@@ -93,7 +93,7 @@ public class EmailTest {
     @Test
     public void testHtmlEmail(){
 
-        EmailUtil.HtmlEmail("chenxi1208@163.com","你现在到我办公室来","<h2>带上学习资料</h2>");
+        EmailUtil.HtmlEmail("185869614@qq.com","到我办公室来","<h2>带上学习资料</h2>");
 
     }
 }

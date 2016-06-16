@@ -1,17 +1,19 @@
 package com.it.test;
 
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.patchca.color.SingleColorFactory;
 import org.patchca.filter.predefined.CurvesRippleFilterFactory;
-import org.patchca.font.FontFactory;
+
 import org.patchca.service.ConfigurableCaptchaService;
 import org.patchca.utils.encoder.EncoderHelper;
 import org.patchca.word.RandomWordFactory;
 
 import java.awt.*;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 import static java.awt.Font.*;
@@ -59,6 +61,36 @@ public class MyTestCase {
         outputStream.close();
 
         //
+
+    }
+
+    @Test
+    public void testDate() {
+        Date date = new Date(); //现在的时间
+        long timeStamp = date.getTime(); //1970年
+        System.out.println(timeStamp);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String now = simpleDateFormat.format(date);
+        System.out.println(now);
+
+    }
+
+    @Test
+    public void testJodaTime() {
+        DateTime dateTime = DateTime.now();
+        dateTime = dateTime.plusDays(25);
+        dateTime = dateTime.plusHours(35);
+        String now = dateTime.toString("yyyy-MM-dd HH:mm:ss");
+        System.out.println(now);
+    }
+
+    @Test
+    public void testFileupload(){
+        String headerValue = "form-data; name=\"doc\"; filename=\"苹果 001.JPG\"";
+        headerValue = headerValue.substring(headerValue.indexOf("fi"));
+        headerValue = headerValue.substring(headerValue.indexOf("\"")+1,headerValue.length()-1);
+        System.out.println(headerValue);
 
     }
 }
