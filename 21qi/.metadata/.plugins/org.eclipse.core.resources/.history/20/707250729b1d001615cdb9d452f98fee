@@ -1,0 +1,15 @@
+package kaishengit;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Tset {
+
+	public static void main(String[] args) throws IOException {
+		
+		String  path = "D:/text";
+		File file = new java.io.File(path);
+		file.createNewFile();
+	}
+
+}

@@ -1,0 +1,63 @@
+package com.kaishengit.Phone;
+
+import java.util.Scanner;
+
+import Contact.kaishengit.entity.Contact;
+
+public class Phone {
+	
+	private Scanner sc = new Scanner(System.in);
+	
+	private Contact[] users = new Contact[50];
+	
+	public void start() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("电话本");
+		System.out.println("1.增加");
+		System.out.println("2.修改");
+		System.out.println("3.删除");
+		System.out.println("4.查看所有");
+		System.out.println("5.查找");
+		System.out.println("6.退出");
+		System.out.print("请选择：");
+		String input =sc.next();
+		
+		if (input.equals("1")){
+			addusers();
+		}else if (input.equals("2")){
+			updatausers();
+		}else if (input.equals("3")){
+			deleteusers();
+		}else if (input.equals("4")){
+			showall();
+		}else if (input.equals("5")){
+			findusers();
+		}else if (input.equals("6")){
+			save();
+			System.out.println("退出成功");
+			break;
+		}else{
+			System.out.println("选择错误，请重新选择");
+		}
+	}
+
+	private void addusers() {
+		// TODO 自动生成的方法存根
+		
+	}
+	
+	private void updatausers() {
+		// TODO 自动生成的方法存根
+		
+	}
+	
+	private void deleteusers() {
+		// TODO 自动生成的方法存根
+		
+	}
+	
+	private void showall() {
+		// TODO 自动生成的方法存根
+		
+	}
+}

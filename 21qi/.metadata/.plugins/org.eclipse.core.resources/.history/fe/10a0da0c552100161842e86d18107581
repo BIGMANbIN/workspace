@@ -1,0 +1,13 @@
+package com.kaishengit;
+
+//import com.kaishengit.Phone.PhoneBook;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		String name = "Tom";
+		int age = 18;
+		System.out.println("ĞÕÃû".concat(name)+"\n"+("ÄêÁä") + age);
+	}
+}

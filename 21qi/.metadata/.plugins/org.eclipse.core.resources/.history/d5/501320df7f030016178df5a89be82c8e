@@ -1,0 +1,47 @@
+package com.kaishengIT;
+
+public class Zongjia {
+
+	public static void main(String[] args) {
+//		String jsq = "y";
+//		int zong = 0;
+//		while("y".equals(jsq)){
+//		java.util.Scanner sc = new java.util.Scanner(System.in);
+//		System.out.print("请输入单价");
+//		int dan = sc.nextInt();
+//		zong += dan;
+//		System.out.print("输入y继续");
+//		jsq = sc.next();
+//		
+//		
+//		}
+//		System.out.println("总金额为:" + zong);
+		
+		
+		
+		
+		
+//		声明计数器
+//		声明总金额
+//		while xunhuan 
+//		输入单价
+//		询问是否继续
+//		把单价累加到总金额
+//		输出总金额
+		
+		String jsq = "n";
+		int sum = 0;
+		while ("n".equals(jsq)){
+			java.util.Scanner sc = new java.util.Scanner(System.in);
+			System.out.print("请输入单价");
+			int num = sc.nextInt();
+			sum += num;
+			jsq = sc.next();
+			System.out.print("输入n继续");
+			
+		}
+		System.out.println(sum);
+		
+	}
+
+}

@@ -1,0 +1,169 @@
+package com.kaishengIT;
+
+public class Test {
+
+	
+
+	public static void main(String[] args) {
+		
+		//		int i = 0;
+//		while(i < 10){
+//			i++;
+//			System.out.println("good good study,Day Day up" + i + "次");
+//			
+//		}
+//		//1.声明计数器，
+//		String jsq = "y";
+//		//2.声明总金额  
+//		int sum = 0;
+//		//3.while 计数器循环条件（计数器为y）
+//		while("y".equals(jsq)){ 
+//			//4.输入单价：
+//			java.util.Scanner sc = new java.util.Scanner(System.in);
+//			System.out.print("请输入单价");
+//			int num = sc.nextInt();
+//			//5.把单价加入总金额 
+//			sum += num;
+//			//6.输入是否继续 计数器=用户录入的值
+//			System.out.print("输入y继续");
+//			jsq = sc.next();
+//		}
+//		//7.输出总金额 
+//		System.out.println("总金额为:" + sum);
+		
+//		输入班级人数求平均分
+//		声明总人数 n
+//		声明总成绩=0
+//		while 循环 n次{
+//		输入单个学生成绩
+//		总成绩+=单个学生成绩
+//		输入（请继续输入学生成绩）}
+//		输出（总成绩）
+//		输出（总成绩/n）
+		
+	
+//		int score = 0;
+//		int num = 0;
+//		while(num < 3){
+//			java.util.Scanner sc = new java.util.Scanner(System.in);
+//			System.out.print("请输入学生成绩:");
+//			
+//			int g = sc.nextInt();
+//			
+//			score += g;
+//			num++;
+//
+//		}
+//		int avg = score / num;
+//		System.out.println("总成绩为:" + score);
+//		System.out.println("平均成绩为:" + avg);
+//		
+		
+		
+//		int zongchengji = 0;
+//		int num = 0;
+//		while(num <5){
+//		java.util.Scanner sc = new java.util.Scanner(System.in);
+//		System.out.print("请输入成绩");
+//		int dan = sc.nextInt();
+//		zongchengji += dan;
+//		num++;
+//		
+//		
+//		}
+//		
+//		int avg = zongchengji / num;
+//		System.out.println("总成绩为:"+ zongchengji);
+//		System.out.println("平均成绩为:" + avg);
+		
+		
+//		java.util.Scanner sc = new java.util.Scanner(System.in);
+//		
+//			int sum = 0;
+//			int i = 1;
+//			
+//			while (i <= 100){
+//				
+//				if (i % 2 == 0){
+//					
+//					sum += i;
+//			}
+//					i++;
+//			}
+//				System.out.println(sum);
+		
+	
+//	int i = 0;
+//	while(i < 5){
+//		i++;
+//		if(i == 3){
+//		continue;
+//		}
+//		System.out.println(i);
+//		
+//		
+//	}
+	
+	
+//		int i = 0;
+//		while (i < 5){
+//			i++;
+//			if(i == 3){
+//				break;
+//			}
+//			System.out.println(i);
+//		}
+		
+//		int i = 1;
+//		do{
+//			System.out.println("第" + i + "次");
+//			i++;
+//		}while(i <=10);
+			
+		
+//		int score;
+//		do{
+//			System.out.println("进行考试:");
+//			System.out.print("考试得分:");
+//			
+//			java.util.Scanner sc = new java.util.Scanner(System.in);
+//			
+//			score = sc.nextInt();
+//			System.out.println("");
+//		
+//		}while(score < 60);
+//		
+//		System.out.println("考试合格");
+//		
+//	
+		
+//		对100以内的奇数求和
+//		int sum = 0;
+//		for(int i = 1; i <= 100; i++){
+//			if(i % 2 == 1){
+//				sum += i;
+//			
+//			}
+//		}
+//		System.out.println(sum);
+		
+		for(int i = 0; i < 5; i++){
+			
+			for(int a = 0; a < 5; a++){
+				
+			}
+		}
+		System.out.println("*");
+		
+	}
+			
+		
+		
+		
+		
+		
+		
+	}
+	
+
+

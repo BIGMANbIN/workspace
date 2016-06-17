@@ -1,0 +1,12 @@
+package Contact.kaishengit.entity;
+
+public class Contact1 {
+	
+	private String name;
+	private String phone;
+	private String sexualit;
+	private String birthday;
+	
+	
+	
+}

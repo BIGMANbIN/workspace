@@ -1,0 +1,17 @@
+package kaishengit;
+
+public class Test {
+
+	private Test(){
+		
+	}
+	private static Test test = new Test();
+	
+	public static Test getInstance(){
+		return test;
+	}
+}
+		
+// 单利模式
+		
+

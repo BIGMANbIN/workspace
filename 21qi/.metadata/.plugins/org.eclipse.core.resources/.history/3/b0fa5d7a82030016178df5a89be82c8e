@@ -1,0 +1,46 @@
+package com.kaishengIT;
+
+public class Pingjunchengji {
+	public static void main(String[] args){
+		int score = 0;
+		int num = 0;
+		while (num < 5){
+			java.util.Scanner sc = new java.util.Scanner(System.in);
+			System.out.print("请输入成绩");
+			int num1 = sc.nextInt();
+			score += num; 
+			num++;
+		}
+		int a = score / num;
+		System.out.println("总成绩为:" + score);
+		System.out.println("平均成绩为:" + a);
+	
+//		人数
+//		总分
+//		while循环
+//		输入学生成绩
+//		成绩累加
+//		求平均成绩   总分除以人数
+//		输出总成绩
+//		输出平均成绩
+		
+//		int people = 0;
+//		int score = 0;
+//		while (people < 3){
+//			java.util.Scanner sc = new java.util.Scanner(System.in);
+//			System.out.print("输入学生成绩");
+//			int num = sc.nextInt();
+//			score += people;
+//			people++;
+//		
+//		}
+//		int a = score / people;
+//		System.out.println("总成绩为:" + score);
+//		System.out.println("平均成绩为:" + a);
+		
+	
+	
+	}
+	
+
+}

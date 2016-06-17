@@ -1,0 +1,148 @@
+package com.kaishengit;
+
+import java.util.Scanner;
+
+public class PhoneBook {
+
+	private Scanner sc = new Scanner(System.in);
+
+	private Contact[] users = new Contact[40];
+
+	public void start() {
+		read();
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("===电话本====");
+			System.out.println("1.新增联系人");
+			System.out.println("2.修改联系人");
+			System.out.println("3.删除联系人");
+			System.out.println("4.查看所有联系人");
+			System.out.println("5.查找联系人");
+			System.out.println("6.退出");
+			System.out.println("============");
+			System.out.println("请选择：");
+
+			String input = sc.next();
+
+			if (input.equals("1")) {
+				addusers();
+			}else if (input.equals("2")){
+				updatausers();
+			}else if (input.equals("3")){
+				deleteusers();
+			}else if (input.equals("4")){
+				showall();
+			}else if (input.equals("5")){
+				findusers();
+			}else if (input.equals("6")){
+				save();
+				System.out.println("退出成功");
+				break;
+			}else {
+				System.out.println("选择错误，请重新选择");
+			}
+		}
+		sc.close();
+	}
+
+	private void addusers() {
+//		Contact con = new Contact(getstr("请输入姓名"),getstr("请输入电话"),
+//				getstr("请输入号码"),getstr("请输入生日"));
+//		
+//		boolean flag = false;
+//		for (int i = 0; i < users.length; i++) {
+//			if(users[i] == null){
+//				users[i] = con;
+//				flag = true;
+//				break;
+//			}
+//		}
+//		if(flag){
+//			System.out.println("添加成功");
+//		}else {
+//			System.out.println("添加失败");
+//		}
+//
+//	}
+//
+//	private String getstr(String string) {
+//		return null;
+//	}
+		System.out.println("请输入姓名:");
+		String name =sc.next();
+		System.out.println("请输入电话:");
+		String phone =sc.next();
+		System.out.println("请输入性别:");
+		String sexualit =sc.next();
+		System.out.println("请输入生日:");
+		String bithday =sc.next();
+		
+		Contact con = new Contact(name, phone, sexualit, bithday);
+		con.getName();
+		con.getPhone();
+		con.getSexualit();
+		con.getBirthday();
+		
+		boolean flag = true;
+		if(flag){
+			System.out.println("【添加成功】");
+			
+		}else {
+			System.out.println("【添加失败】");
+		}
+	}
+		
+	private void updatausers() {
+		String name = getstr("请输入要修改的姓名：");
+		
+		boolean flag = false;
+		for (Contact con : users) {
+			if(con != null && name.equals(con.getName())){
+				con.setName("修改名字为：");
+				con.setPhone("修改电话为：");
+				con.setSexualit("修改性别为：");
+				con.setBirthday("修改生日为：");
+				flag = true;
+				break;
+			}
+		}
+		if(flag){
+			System.out.println("修改成功");
+		}else {
+			System.out.println("修改失败");
+		}
+	}
+
+	private String getstr(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void deleteusers() {
+		String name = getstr("输入要删除的姓名：");
+		boolean flag = false;
+		for (int i = 0; i < users.length; i++) {
+			if(users[i] != null && name.equals(users[i].getName())){
+				users[i] = null;
+				flag = true;
+				break;
+			}
+		}
+	}
+
+	private void showall() {
+
+	}
+
+	private void findusers() {
+
+	}
+
+	private void save() {
+
+	}
+
+	private void read() {
+
+	}
+}

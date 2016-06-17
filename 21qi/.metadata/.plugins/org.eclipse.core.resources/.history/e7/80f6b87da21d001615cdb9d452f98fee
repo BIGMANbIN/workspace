@@ -1,0 +1,23 @@
+package kaishengit;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Tset {
+
+	public static void main(String[] args) {
+		System.out.println(abc(30));
+	
+		
+	}
+	static int abc(int n){
+		if(n == 1){
+			return 0;
+		}
+		if(n == 2){
+			return 1;
+		}
+		return abc(n-1) + abc(n-2);
+	}
+
+}

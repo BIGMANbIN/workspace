@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.kaishengIT&apos; to &apos;com.kaishengit&apos;&#x0D;&#x0A;- Original project: &apos;Java SE14&apos;&#x0D;&#x0A;- Original element: &apos;Java SE14/src/com.kaishengIT&apos;&#x0D;&#x0A;- Renamed element: &apos;Java SE14/src/com.kaishengit&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.kaishengIT&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.kaishengIT" name="com.kaishengit" qualified="false" references="true" stamp="1460878923695" textual="false" version="1.0"/>
+</session>

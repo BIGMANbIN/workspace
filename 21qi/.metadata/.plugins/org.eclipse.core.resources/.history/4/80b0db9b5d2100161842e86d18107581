@@ -1,0 +1,13 @@
+package com.kaishengit;
+
+//import com.kaishengit.Phone.PhoneBook;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int i = 0;
+		java.util.Scanner sc = new java.util.Scanner(System.in); 
+		System.out.print("请输入一个数字：");
+		int n = sc.nextInt();
+	}
+}

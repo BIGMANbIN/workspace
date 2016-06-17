@@ -1,0 +1,27 @@
+package kaishengit;
+
+public class Test {
+	// 1.单利模式
+//	private Test(){
+//		
+//	}
+//	private static Test test = new Test();
+//	
+//	public static Test getInstance(){
+//		return test;
+//	}
+//	7.递归算法
+	public static void main(String[] args) {
+		System.out.println(a(8));
+	}
+	static int a(int n){
+		if(n == 1){
+			return 10;
+		}
+		return n+2;
+		
+	}
+}		
+
+
+

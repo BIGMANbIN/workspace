@@ -1,0 +1,33 @@
+package com.kaishengit;
+
+//import com.kaishengit.Phone.PhoneBook;
+
+public class Test {
+
+	public static void main(String[] args) {
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.print("请输入工资金额：");
+		int num = sc.nextInt();
+		System.out.println("应交税金额为：");
+		int num1  = 0;
+		num1 = num -3500;
+		if(num1 < 0){
+			System.out.println(0);
+		}else if(num1 < 1500){
+			System.out.println(num1 * 0.03);
+		}else if(num1 >= 1500 && num1 < 4500){
+			System.out.println(num1 * 0.1 - 105);
+		}else if(num1 >= 4500 && num1 < 9000){
+			System.out.println(num1 * 0.2 - 555);
+		}else if(num1 >= 9000 && num1 < 35000){
+			System.out.println(num1 * 0.25 - 1005);
+		}else if(num1 >= 35000 && num1 < 55000){
+			System.out.println(num1 * 0.3 - 2755);
+		}else if(num1 >= 55000 && num1 <80000){
+			System.out.println(num1 * 0.35 - 5505);
+		}else{
+			System.out.println(num1 * 0.45 - 13505);
+		}
+		
+	}
+}

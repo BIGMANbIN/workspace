@@ -1,0 +1,25 @@
+package com.kaishengIT;
+
+public class Pingjunchengji {
+	public static void main(String[] args){
+//		int score = 0;
+//		int num = 0;
+//		while (num < 5){
+//			java.util.Scanner sc = new java.util.Scanner(System.in);
+//			System.out.print("请输入成绩");
+//			int num1 = sc.nextInt();
+//			score += num; 
+//			num++;
+//		}
+//		int a = score / num;
+//		System.out.println("总成绩为:" + score);
+//		System.out.println("平均成绩为:" + a);
+	
+	
+	
+	
+	
+	}
+	
+
+}

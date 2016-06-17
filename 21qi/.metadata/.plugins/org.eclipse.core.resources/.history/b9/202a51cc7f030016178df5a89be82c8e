@@ -1,0 +1,23 @@
+package com.kaishengIT;
+
+public class Zongjia {
+
+	public static void main(String[] args) {
+		String jsq = "y";
+		int zong = 0;
+		while("y".equals(jsq)){
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.print("请输入单价");
+		int dan = sc.nextInt();
+		zong += dan;
+		System.out.print("输入y继续");
+		jsq = sc.next();
+		
+		
+		}
+		System.out.println("总金额为:" + zong);
+		
+		
+	}
+
+}
