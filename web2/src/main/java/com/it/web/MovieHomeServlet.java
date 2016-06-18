@@ -27,7 +27,7 @@ public class MovieHomeServlet extends HttpServlet{
         }
 
         MovieService movieService = new MovieService();
-       List<Movie> movieList = movieService.findByPageNo(p);
+        List<Movie> movieList = movieService.findByPageNo(p);
         req.setAttribute("movieList",movieList);
 
         //Page<Movie> page = movieService.findByPageNo(p);
