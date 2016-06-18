@@ -4,6 +4,8 @@ import com.it.entity.Movie;
 import com.it.service.MovieService;
 import com.it.util.Page;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import javax.servlet.ServletException;
@@ -12,11 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/moviehome")
 public class MovieHomeServlet extends HttpServlet{
 
+
+    Logger logger= LoggerFactory.getLogger(MovieHomeServlet.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -27,11 +30,12 @@ public class MovieHomeServlet extends HttpServlet{
         }
 
         MovieService movieService = new MovieService();
-        List<Movie> movieList = movieService.findByPageNo(p);
-        req.setAttribute("movieList",movieList);
+        Page<Movie> page = movieService.findByPageNo(p);
 
-        //Page<Movie> page = movieService.findByPageNo(p);
-        //req.setAttribute("page",page);
+        req.setAttribute("page",page);
+
+        logger.debug("page:{},movieList:{}",page,page.getItems());
+
         req.getRequestDispatcher("/WEB-INF/views/moviehome.jsp").forward(req,resp);
     }
 }

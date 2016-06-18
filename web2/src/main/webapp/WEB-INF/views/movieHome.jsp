@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,7 +24,7 @@
                         </tr>
                    </thead>
                    <tbody>
-                        <c:forEach items="${requestScope.movieList}" var="movie">
+                        <c:forEach items="${requestScope.page.items}" var="movie">
                             <tr>
                                 <td width="350">${movie.title}</td>
                                 <td>${movie.sendtime}</td>
@@ -37,7 +36,53 @@
                    </tbody>
                </table>
            </div>
+           <div class="panel-footer text-right">
+               <ul class="pagination" id="page"></ul>
+
+               <%--<ul class="pagination" style="margin: 0px">
+                    <c:choose>
+                        <c:when test="${page.pageNo == 1}">
+                            <li class="disabled"><a href="javascript:;">首页</a></li>
+                            <li class="disabled"><a href="javascript:;">上一页</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/home?p=1">首页</a></li>
+                            <li><a href="/home?p=${page.pageNo-1}">上一页</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${page.pageNo == page.totalPages}">
+                            <li class="disabled"><a href="javascript:;">下一页</a></li>
+                            <li class="disabled"><a href="javascript:;">末页</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/home?p=${page.pageNo+1}">下一页</a></li>
+                            <li><a href="/home?p=${page.totalPages}">末页</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>--%>
+           </div>
        </div>
+           </div>
+       </div>
+
+        <script src="/static/js/jquery-2.2.3.min.js"></script>
+        <script src="/static/js/jquery.twbsPagination.min.js"></script>
+        <script>
+            $(function(){
+                $("#page").twbsPagination({
+                    totalPages:${page.totalPages},
+                    visiblePages:10,
+                    first:"首页",
+                    prev:"上一页",
+                    next:"下一页",
+                    last:"末页",
+                    href:"?p={{number}}"
+
+                });
+            });
+
+        </script>
     </div>
 </body>
 </html>

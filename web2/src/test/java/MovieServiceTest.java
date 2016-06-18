@@ -1,5 +1,7 @@
+import com.it.dao.MovieDao;
 import com.it.entity.Movie;
 import com.it.service.MovieService;
+import com.it.util.Page;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,12 +26,20 @@ public class MovieServiceTest {
 
     @Test
     public void findByPage(){
-        List<Movie> movieList = movieService.findByPageNo(1);
-        for (Movie movie : movieList) {
+        Page<Movie> page = movieService.findByPageNo(1);
+        for (Movie movie :page.getItems()) {
             logger.debug("{}",movie);
         }
-        assertEquals(10,movieList.size());
+        assertEquals(10,page.getItems().size());
 
+    }
+
+    @Test
+    public void findByPageTest(){
+        MovieDao movieDao = new MovieDao();
+
+
+        assertEquals(10,movieDao.findByPage(0,10).size());
     }
 
 }
