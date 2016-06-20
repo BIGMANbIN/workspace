@@ -13,15 +13,15 @@
         //兼容
         var xmlHttp = null;
         function createXmlHttp(){
+            //<IE9
             if(window.ActiveXObject){
                 xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
             }else{
+                //>=IE9和非IE9浏览器
                 xmlHttp = new XMLHttpRequest();
             }
             return xmlHttp;
         }
-
-
 
         document.querySelector("#btn").onclick = function(){
             //1.获取函数对象
