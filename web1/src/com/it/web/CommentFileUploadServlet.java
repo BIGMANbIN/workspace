@@ -1,7 +1,25 @@
 package com.it.web;
 
-/**
- * Created by Administrator on 2016/6/20 0020.
- */
-public class CommentFileUploadServlet {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class CommentFileUploadServlet extends HttpServlet{
+
+    Logger logger = LoggerFactory.getLogger(CommentFileUploadServlet.class);
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("//WEB-INF/views/upload3.jap").forward(req,resp);
+    }
+
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (ServletFileUpload.isMultipartContent(req))
+    }
 }

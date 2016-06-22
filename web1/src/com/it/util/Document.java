@@ -67,7 +67,4 @@ public class Document {
         this.filename = filename;
     }
 
-
-    public void getDisplaysize(String s) {
-    }
 }

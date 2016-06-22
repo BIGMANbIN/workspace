@@ -1,5 +1,6 @@
 package com.it.web;
 
+import com.it.service.DocumentService;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,14 +23,18 @@ public class Servlet3FileuploadServlet extends HttpServlet{
 
     private Logger logger = LoggerFactory.getLogger(Servlet3FileuploadServlet.class);
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/upload3.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/upload.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        //1. 文件上传表单必须是post提交
+        //2. 将form属性值修改为 enctype="multipart/form-data"(修改该属性后，
+        //   会导致request的getParameter()方法无法获取表单中的值)
+        //3. 给处理文件上传的servlet添加 @MultipartConfig 注解
         req.setCharacterEncoding("UTF-8");
 
         //获取元素的值
@@ -38,8 +43,13 @@ public class Servlet3FileuploadServlet extends HttpServlet{
 
         //获取文件元素的值
         Part part = req.getPart("doc");
+        logger.debug("size:{}",part.getInputStream());
+        InputStream input = part.getInputStream();
 
-        //获取文件的大小，按字节算
+        DocumentService documentService = new DocumentService();
+        documentService.updateFlie(getfileName(part),part.getSize(),input);
+
+       /* //获取文件的大小，按字节算
         logger.debug("size:{}",part.getSize());
         InputStream input = part.getInputStream();
 
@@ -52,6 +62,8 @@ public class Servlet3FileuploadServlet extends HttpServlet{
         logger.debug("文件的初始名为：{}",fileName);
 
         saveFile(part);
+
+        **/
 
     }
 

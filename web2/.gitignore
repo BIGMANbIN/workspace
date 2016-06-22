@@ -1,5 +1,5 @@
 .idea/
-target
-.gitignore
-web2.iml
-static
+.gitignore/
+web2.iml/
+static/
+target/

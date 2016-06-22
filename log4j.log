@@ -1,0 +1,22 @@
+#log4j.appender.sout=org.apache.log4j.ConsoleAppender
+#log4j.appender.sout.layout=org.apache.log4j.PatternLayout
+#log4j.appender.sout.layout.ConversionPattern=[%p](%d)---%l--%m\r\n
+
+
+#生成文件日志
+#log4j.appender.fout=org.apache.log4j.FileAppender
+#log4j.appender.fout.layout=org.apache.log4j.PatternLayout
+#log4j.appender.fout.layout.ConversionPattern=[%p](%d)---%l--%m%n
+#log4j.appender.fout.file=E:/my.log
+#log4j.appender.fout.Threshold=warn
+
+
+#按天生成日志
+
+log4j.appender.dayfile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.dayfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.dayfile.layout.ConversionPattern=[%p](%d)---%l--%m%n
+log4j.appender.dayfile.DatePattern='.'yyyy-MM-dd
+log4j.appender.dayfile.file=E:/my.log
+
+log4j.rootLogger = debug,dayfile
