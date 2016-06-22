@@ -25,15 +25,15 @@ public class MovieService {
         int totalSize = movieDao.count().intValue();//获取数据库中数据的总数
 
 
-        Page<Movie> page = new Page<>(totalSize,10,pageNo);
+        Page<Movie> page = new Page<>(totalSize,pageNo,10);
 
         List<Movie> movieList = movieDao.findByPage(page.getStart(),10);
         page.setItems(movieList);
         logger.debug("movieList:{},start:{}",movieList);
         return page;
 
-        /*
-        int totalsize = movieDao.count().intValue();//获取数据库中数据的总数
+
+        /*int totalsize = movieDao.count().intValue();//获取数据库中数据的总数
         int size = 10;//每页的数量
         int totalpagesize = totalsize / size; //总页数
         //判断如果总页数余每页的数量不等于0 则总页数++
