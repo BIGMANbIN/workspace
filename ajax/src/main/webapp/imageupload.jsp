@@ -24,86 +24,86 @@
 <script type="mayTemplate" id="progressTemplate">
 
     <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" style="width: 0px"></div>
+        <div class="progress-bar progress-bar-success" role="progressbar" style="width: 0%"></div>
     </div>
 </script>
 <script>
     $(function () {
         var uploader = WebUploader.create({
             swf: "/static/js/webupload/Uploader.swf",
-            pick: "#piacker",
+            pick: "#picker",
             fileVal: "file",
-            auto: true,
             accept: {
                 title: 'Image',
                 extensions: 'gif,jpg,jpeg,bmp,png',
-                mimeTpye: 'image/*'
+                mimeType: 'image/*'
             }
         });
 
         //将选择的文件放到队列中
 
         uploader.on("fileQueued", function (file) {
-            var html = '<li id="' + file.id + '"><<img class="img-thumbnail"></li>';
+            var html = '<li id="' + file.id + '"><img class="img-thumbnail"></li>';
             $("#fileList").append(html);
 
-        uploader.makeThumb(file, function (error, src) {
-            if (error) {
-                return;
-            }
+            uploader.makeThumb(file, function (error, src) {
+                if (error) {
+                    return;
+                }
 
-            $("#" + file.id).find("img").attr('src', src);
-        }, 100, 100);
-    });
+                $("#" + file.id).find("img").attr('src', src);
+            }, 100, 100);
+        });
 
         //文件开始上传时调用的事件
 
-        uploader.on("uploadPrpgress",function(file,percentage){
+        uploader.on("uploadProgress", function (file, percentage) {
             percentage = parseInt(percentage * 100);
 
-            /*
-            var $li = $("#"+file.id);
-            if ($li.find(".progress".length)){
-                $li.find("progress.progress-bar").css("width",percentage+"%");
-            }else {
+            var $li = $("#" + file.id);
+
+            if ($li.find(".progress").length) {
+                $li.find(".progress .progress-bar").css("width", percentage + "%");
+            } else {
                 var template = $("#progressTemplate").html();
                 $li.append(template);
             }
 
-            var $li = $("#"+file.id);
+            /*/!* var $li = $("#"+file.id);
 
-            if ($li.find("span").length){
-                $li.find("span").text("上传中..."+percentage);
-            }else {
-                $("#"+file.id).append("<span>上传中...</span>");
-            }
+             if ($li.find("span").length){
+             $li.find("span").text("上传中..."+percentage);
+             }else {
+             $("#"+file.id).append("<span>上传中...</span>");
+             }
 
-            if (percentage == 100){
-                $li.find(("span").text("上传完成").fadeOut(3000));
-            }
-            */
+             if (percentage == 100){
+             $li.find(("span").text("上传完成").fadeOut(3000));
+             }*/
+
         });
 
         //当文件上传成功
 
         uploader.on("uploadSuccess", function (file) {
-            $("#"+file.id).css("color","#ccc");
+            $("#" + file.id).css("color", "#ccc");
         });
 
         //当文件上传失败
-        uploader.on("uploadError",function(file){
-            $("#"+file.id).css("color","darkred");
+        uploader.on("uploadError", function (file) {
+            $("#" + file.id).css("color", "darkred");
         });
 
         //无论上传失败或成功
-        uploader.on("uploadComplete",function(){
+        uploader.on("uploadComplete", function () {
 
         });
 
         //手动开启上传
-       $("#btn").click(function(){
-          uploader.upload();
-       });
+        $("#btn").click(function () {
+            console.log("开机")
+            uploader.upload();
+        });
 
     });
 

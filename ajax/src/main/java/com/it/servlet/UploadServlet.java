@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 
-import static sun.util.calendar.ZoneInfoFile.getFileName;
-
 @WebServlet("/upload")
 @MultipartConfig
 public class UploadServlet extends HttpServlet {
@@ -30,7 +28,7 @@ public class UploadServlet extends HttpServlet {
 
         String headerValue = part.getHeader("Content-Disposition");
 
-        headerValue = headerValue.substring(headerValue.indexOf("fileName=\""));
+        headerValue = headerValue.substring(headerValue.indexOf("fileName=\"")+1);
 
         headerValue = headerValue.substring(headerValue.indexOf("\"")+1,headerValue.length()-1);
 

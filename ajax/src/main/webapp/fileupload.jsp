@@ -17,11 +17,10 @@
     <ul id="fileList"></ul>
     <button id="btn" class="btn btn-success">开始上传</button>
 </div>
-
+<script src="/static/js/jquery-2.2.3.min.js"></script>
 <script src="/static/js/webupload/webuploader.js"></script>
-
-<script type="myTemplate" id="progressTemplate">
-    <div class="progress">
+<script type="myTemplate" >
+    <div class="progress" id="progressTemplate">
         <div class="progress-bar progress-bar-success"></div>
     </div>
 </script>
@@ -29,10 +28,10 @@
 <script>
     $(function(){
 
-        var upload = WebUploader.create({
+        var uploader = WebUploader.create({
             swf:"/static/js/webupload/Uploader.swf",
             server:"/upload",
-            pick:"#piacker",
+            pick:"#picker",
             fileVal:"file"
         });
 
@@ -48,28 +47,26 @@
         //文件开始上传时调用的事件
 
         uploader.on("uploadProgress",function(file,percentage){
-            percentage = perseInt(percentage * 100);
+            percentage = parseInt(percentage * 100);
 
             var $li = $("#" + file.id);
 
-            if(￥li.find(".progress").length){
+            if($li.find(".progress").length){
                 $li.find(".progress.progress-bar").css("width",percentage + "%");
             }else {
-                var template = ("#progressTemplate").html();
+                var template = $("#progressTemplate").html();
                 $li.append(template);
             }
 
         });
 
         //文件上传成功
-        uploader.on("uploadSuccess",function(){
+        uploader.on("uploadSuccess",function(file){
 
             $("#"+file.id).css("color","#ccc");
         });
         //文件上传失败
-        uploader.on("uploadError", function(){
-
-
+        uploader.on("uploadError", function(file){
             $("#"+file.id).css("color","darkred");
         });
 
@@ -80,7 +77,9 @@
         //手动开启上传
 
         $("#btn").click(function () {
+            console.log("开机")
             uploader.upload();
+
         })
     });
 
