@@ -30,5 +30,6 @@ public class Test {
             String[] dd = xxx.split("\\+++");
             map.put(dd[0], dd[1]);
         }
+        System.out.println(map);
     }
 }
