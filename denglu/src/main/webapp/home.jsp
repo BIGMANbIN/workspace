@@ -37,25 +37,8 @@
             display:block;
 
         }
-        .qa-rank .votes {
-            display: inline-block;
-            text-align:center;
-            font-weight:bold;
-            text-decoration:none;
-            list-style: none;
-
-        }
-        .qa-rank .answered {
-            <!--background-color: #009a61;-->
-            text-align:center;
-            font-weight:bold;
-            text-decoration:none;
-            list-style: none;
-
-        }
-        .qa-rank .views {
-            color: #999;
-
+        .wrap .qa-rank{
+            width: 100%;
         }
     </style>
 
@@ -127,22 +110,14 @@
         <div class="stream-list question-stream">
             <section class="stream-list_item">
                 <div class="qa-rank">
-                    <div class="votes hidden-xs">#<small>投票</small></div>
-                </div>
-                <div class="qa-rank">
-                    <div class="answers answered">#<small>回答</small></div>
-                </div>
-                <div class="qa-rank">
-                    <div class="views hidden-xs">#<small>浏览</small></div>
-                </div>
-                <div class="summary">
-                    <ul class="author list-inline">
-                        <li>
-                            <a href="#">这么爱</a>
-                            <span class="split"></span>
-                            <a href="#" class="askDate">刚刚提问</a>
-                        </li>
-                    </ul>
+                    <div class="votes hidden-xs">
+                        0<a class="btn btn-primary alert-info"><small>投票</small></a>
+                        0<a class="btn btn-primary btn-info"><small>回答</small></a>
+                        0<a class="btn btn-primary text-info"><small>浏览</small></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+
                     <h4 class="title">
                         <a href="#">写一个ftp服务端口扫描程序需要准备那些知识？</a>
                     </h4>
@@ -154,7 +129,7 @@
                             <a class="tag tag-sm" href="#" data-toggle="popover" data-original-title="ftp">ftp</a>
                         </li>
                     </ul>
-                </div>
+                </div>>
             </section>
             <section class="stream-list_item">
                 <div class="qa-rank">
